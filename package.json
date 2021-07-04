@@ -14,9 +14,10 @@
     "@testing-library/user-event": "^13.1.9",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.2",
+    "eslint-plugin-testing-library": "^4.7.0",
     "husky": "^7.0.0",
-    "lint-staged": "^11.0.0"
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,7 +35,19 @@
     "plugins": [
       "react",
       "prettier",
-      "react-hooks"
+      "react-hooks",
+      "testing-library"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/**/*.[jt]s?(x)",
+          "**/?(*.)+(spec|test).[jt]s?(x)"
+        ],
+        "extends": [
+          "plugin:testing-library/react"
+        ]
+      }
     ]
   },
   "browserslist": {
